@@ -188,6 +188,8 @@ body {
 
 @media (max-width: 393px) {
   .mobile-scale {
-    zoom: calc(100vw / 393);
+    transform: scale(calc(100vw / 393));
+    transform-origin: top left;
+    width: 393px;
   }
 }

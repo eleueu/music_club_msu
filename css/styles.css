@@ -186,3 +186,9 @@ body {
   text-shadow:
     0 0 35px rgba(255, 236, 207)
 }
+
+@media (max-width: 393px) {
+  .mobile-scale {
+    zoom: calc(100vw / 393);
+  }
+}

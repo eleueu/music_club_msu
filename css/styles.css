@@ -10,13 +10,50 @@ body {
   padding: 0;
   background: #000433;
   overflow-x: hidden;
+  width: 100%;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 #stage {
   width: 100%;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
+/* Основной контейнер теперь адаптивный */
+.mobile-scale {
+  width: 393px;
+  height: 4674px;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  flex-shrink: 0;
+}
+
+/* Масштабирование для экранов меньше 393px */
+@media (max-width: 393px) {
+  .mobile-scale {
+    transform: scale(calc(100vw / 393));
+    transform-origin: top left;
+    /* Важно: чтобы блок не выходил за пределы экрана */
+    margin: 0;
+  }
+  
+  #stage {
+    overflow: visible;
+    width: 100vw;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Остальные стили без изменений */
 .font-pd-m {
   font-family: "Playfair Display", Times, serif;
   font-weight: 500;
@@ -93,16 +130,13 @@ body {
     0 0 100px rgba(0, 0, 0, 0.75);
 }
 
-body {
-  min-height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+.text-glow {
+  text-shadow: 0 0 35px rgba(255, 236, 207);
 }
 
-#stage > div {
-  margin-left: auto;
-  margin-right: auto;
+.years-glow {
+  text-shadow:
+    0 0 35px rgba(255, 236, 207);
 }
 
 @font-face {
@@ -175,21 +209,4 @@ body {
   font-weight: 500;
   font-style: italic;
   font-display: swap;
-}
-
-.text-glow {
-  text-shadow: 0 0 35px rgba(255, 236, 207);
-}
-
-.years-glow {
-  text-shadow:
-    0 0 35px rgba(255, 236, 207)
-}
-
-@media (max-width: 393px) {
-  .mobile-scale {
-    transform: scale(calc(100vw / 393));
-    transform-origin: top left;
-    width: 393px;
-  }
 }

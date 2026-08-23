@@ -1,0 +1,188 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #000433;
+  overflow-x: hidden;
+}
+
+#stage {
+  width: 100%;
+  overflow: hidden;
+}
+
+.font-pd-m {
+  font-family: "Playfair Display", Times, serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.font-pd-mi {
+  font-family: "Playfair Display", Times, serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.font-pd-i {
+  font-family: "Playfair Display", Times, serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.font-lato {
+  font-family: Lato, Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-lato-b {
+  font-family: Lato, Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.sky {
+  mix-blend-mode: screen;
+}
+
+.intro-lead {
+  font-family: "Playfair Display", Times, serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.3125;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  text-indent: 0;
+  letter-spacing: 0.01em;
+  font-style: normal;  
+}
+
+.intro-lead .font-pd-i {
+  font-style: italic;  
+}
+
+.facts-title {
+  text-shadow:
+    0 0 35px rgb(255, 236, 207),
+    0 0 100px rgba(0, 0, 0, 0.75);
+}
+
+.circle-photo {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.planet-glow {
+  border-radius: 50%;
+  box-shadow:
+    0 0 33.33px rgba(255, 255, 255, 0.7),
+    0 0 137.5px rgba(0, 0, 0, 0.75);
+}
+
+.title-glow {
+    text-shadow:
+    0 0 35px rgb(255, 236, 207),
+    0 0 100px rgba(0, 0, 0, 0.75);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px 0;
+}
+
+#stage > div {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/Lato-Regular.woff2') format('woff2'),
+       url('../fonts/Lato-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/Lato-Italic.woff2') format('woff2'),
+       url('../fonts/Lato-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/Lato-Bold.woff2') format('woff2'),
+       url('../fonts/Lato-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('../fonts/Lato-BoldItalic.woff2') format('woff2'),
+       url('../fonts/Lato-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
+       url('../fonts/PlayfairDisplay-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Italic.woff2') format('woff2'),
+       url('../fonts/PlayfairDisplay-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-Medium.woff2') format('woff2'),
+       url('../fonts/PlayfairDisplay-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/PlayfairDisplay-MediumItalic.woff2') format('woff2'),
+       url('../fonts/PlayfairDisplay-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+.text-glow {
+  text-shadow: 0 0 35px rgba(255, 236, 207);
+}
+
+.years-glow {
+  text-shadow:
+    0 0 35px rgba(255, 236, 207)
+}

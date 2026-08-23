@@ -24,36 +24,17 @@ body {
   justify-content: center;
 }
 
-/* Основной контейнер теперь адаптивный */
-.mobile-scale {
+#page {
   width: 393px;
-  height: 4674px;
   position: relative;
   overflow: hidden;
-  margin: 0 auto;
   flex-shrink: 0;
 }
 
-/* Масштабирование для экранов меньше 393px */
-@media (max-width: 393px) {
-  .mobile-scale {
-    transform: scale(calc(100vw / 393));
-    transform-origin: top left;
-    /* Важно: чтобы блок не выходил за пределы экрана */
-    margin: 0;
-  }
-  
-  #stage {
-    overflow: visible;
-    width: 100vw;
-  }
-  
-  body {
+body {
     overflow-x: hidden;
-  }
 }
 
-/* Остальные стили без изменений */
 .font-pd-m {
   font-family: "Playfair Display", Times, serif;
   font-weight: 500;

@@ -24,14 +24,6 @@
         currentZoom = zoom;
         page.style.transform = 'scale(' + zoom + ')';
         page.style.transformOrigin = 'top center';
-        
-        if (zoom < 1) {
-            stage.style.width = (BASE_WIDTH * zoom) + 'px';
-            stage.style.minWidth = (BASE_WIDTH * zoom) + 'px';
-        } else {
-            stage.style.width = '100%';
-            stage.style.minWidth = 'auto';
-        }
     }
 
     function updateZoom() {

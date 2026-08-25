@@ -10,185 +10,1061 @@ body {
   padding: 0;
   background: #000433;
   overflow-x: hidden;
-  width: 100%;
-  min-height: 100dvh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
 }
 
 #stage {
   width: 100%;
-  overflow: hidden;
   display: flex;
   justify-content: center;
 }
 
 #page {
   width: 393px;
-  position: relative;
-  overflow: hidden;
-  flex-shrink: 0;
+  height: auto;
   transform-origin: top center;
+  background: #000433; 
+  overflow: hidden;
 }
 
-body {
-    overflow-x: hidden;
+.start {
+    width: 393px;
+    height: 412px;
+    margin: 0 auto;
+    position: relative;
 }
 
-.font-pd-m {
-  font-family: "Playfair Display", Times, serif;
-  font-weight: 500;
-  font-style: normal;
+.start-bg {
+    position: absolute;
+    width: 393px;
+    height: 524px;
+    background: linear-gradient(180deg, #000214 0%, #000433 100%); 
+    transform: translate(0px, -112px);
+    pointer-events: none;
 }
 
-.font-pd-mi {
-  font-family: "Playfair Display", Times, serif;
-  font-weight: 500;
-  font-style: italic;
+.start-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    mix-blend-mode: lighten;
 }
 
-.font-pd-i {
-  font-family: "Playfair Display", Times, serif;
-  font-weight: 400;
-  font-style: italic;
+.start-img {
+    width: 333px;
+    height: 365px;
+    position: absolute;
+    transform: translate(0px, 0px);
+}
+
+.logo {
+    position: absolute;
+    width: 231px;
+    height: 121px;
+    transform: translate(122px, 88px);
+    filter: drop-shadow(0 0 35px rgb(207, 222, 255)) drop-shadow(0 0 100px rgba(0, 5, 67))
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Lato';
+    src: url('../fonts/Lato-BoldItalic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../fonts/PlayfairDisplay-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../fonts/PlayfairDisplay-Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../fonts/PlayfairDisplay-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('../fonts/PlayfairDisplay-MediumItalic.woff2') format('woff2');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+.start-txt {
+    position: absolute;
+    left: 40px;
+    top: 288px;
+    font-family: "Playfair Display", Times, serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    font-style: normal; 
+    color: white;
+}
+
+.start-txt .font-pd-i {
+    font-style: italic;
+}
+
+.intro {
+    width: 393px;
+    height: 364px;
+    position: relative;
+    top: 12px;
+}
+
+.intro-shadow {
+    width: 393px;
+    height: 548px;
+    position: absolute;
+    top: -84px;
+    mix-blend-mode: multiply;
+}
+
+.intro-orbit {
+    width: 138px;
+    height: 227px;
+    position: absolute;
+    left: 59px;
+    top: 20px;
+}
+
+.star-1 {
+    width: 52px;
+    height: 52px;
+    position: absolute;
+    left: 143px;
+    top: 2px;
+    mix-blend-mode: luminosity;
+}
+
+.star-2 {
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    left: 60px;
+    top: 81px;
+    mix-blend-mode: luminosity;
+}
+
+.star-3 {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 40px;
+    top: 194px;
+    mix-blend-mode: luminosity;
+}
+
+.intro-texts {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0px;
+    justify-content: start;
+    align-items: end;
+    width: 313px;
+    position: absolute;
+    top: 8px;
+    left: 40px;
+}
+
+.intro-text-block-1 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0px;
+    width: 148px;
+    justify-content: start;
+    align-items: start;
+}
+
+.intro-text-block-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0px;
+    width: 231px;
+    justify-content: start;
+    align-items: start;
+}
+
+.intro-text-block-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0px;
+    width: 313px;
+    justify-content: start;
+    align-items: start;
+}
+
+.intro-heading {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding: 0px;
+    height: 32px;
+    justify-content: start;
+    align-items: end;
+    text-shadow: 
+        0 0 35px rgb(255, 236, 207),
+        0 0 100px rgba(0, 0, 0, 0.75);
+}
+
+.font-pd-m-36 {
+    font-family: "Playfair Display", Times, serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.1;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    font-style: normal; 
+    color: #AFC5FF;
+}
+
+.font-pd-m-24 {
+    font-family: "Playfair Display";
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.1;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    font-style: normal; 
+    color: #AFC5FF;
+}
+
+.font-pd-mi-24 {
+    font-family: "Playfair Display";
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 1.1;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    font-style: italic; 
+    color: #AFC5FF;
 }
 
 .font-lato {
-  font-family: Lato, Arial, sans-serif;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Lato";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    font-style: normal; 
+    color: white;
 }
 
-.font-lato-b {
-  font-family: Lato, Arial, sans-serif;
-  font-weight: 700;
-  font-style: normal;
+.history {
+    width: 393px;
+    height: 742px;
+    position: relative;
 }
 
-.sky {
-  mix-blend-mode: screen;
+.hist-sky {
+    width: 393px;
+    height: 494px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    mix-blend-mode: lighten;
 }
 
-.intro-lead {
-  font-family: "Playfair Display", Times, serif;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 1.3125;
-  text-align: left;
-  margin: 0;
-  padding: 0;
-  text-indent: 0;
-  letter-spacing: 0.01em;
-  font-style: normal;  
+.hist-ph {
+    width: 393px;
+    height: 287px;
+    position: absolute;
+    top: 40px;
+    left: 0px;
 }
 
-.intro-lead .font-pd-i {
-  font-style: italic;  
+.hist-planets {
+    width: 318px;
+    height: 601px;
+    position: absolute;
+    left: 0px;
+    top: 259px;
 }
 
-.facts-title {
-  text-shadow:
-    0 0 35px rgb(255, 236, 207),
-    0 0 100px rgba(0, 0, 0, 0.75);
+.font-pd-m-32 {
+    font-family: "Playfair Display";
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.1;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    color: white;  
 }
 
-.circle-photo {
-  position: relative;
-  border-radius: 50%;
-  overflow: hidden;
+.font-pd-mi-32 {
+    font-family: "Playfair Display";
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.1;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    font-style: italic;
+    color: white;  
 }
 
-.planet-glow {
-  border-radius: 50%;
-  box-shadow:
-    0 0 33.33px rgba(255, 255, 255, 0.7),
-    0 0 137.5px rgba(0, 0, 0, 0.75);
+.hist-heading {
+    position: absolute;
+    left: 40px;
+    top: 268px;
+    text-shadow: 
+        0 0 35px rgb(255, 236, 207),
+        0 0 100px rgba(0, 0, 0, 0.75);
 }
 
-.title-glow {
-    text-shadow:
-    0 0 35px rgb(255, 236, 207),
-    0 0 100px rgba(0, 0, 0, 0.75);
+.hist-texts {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 0px;
+    width: 231px;
+    justify-content: start;
+    align-items: end;
+    position: absolute;
+    left: 122px;
+    top: 343px;
 }
 
-.text-glow {
-  text-shadow: 0 0 35px rgba(255, 236, 207);
+.hist-text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0px;
+    justify-content: start;
+    align-items: start;
 }
 
-.years-glow {
-  text-shadow:
-    0 0 35px rgba(255, 236, 207);
+.font-pd-mi-28 {
+    font-family: "Playfair Display";
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.1;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    font-style: italic;
+    color: #AFC5FF;     
 }
 
-@font-face {
-  font-family: 'Lato';
-  src: url('../fonts/Lato-Regular.woff2') format('woff2'),
-       url('../fonts/Lato-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+.font-lato-14 {
+    font-family: "Lato";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.3;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    color: white;   
 }
 
-@font-face {
-  font-family: 'Lato';
-  src: url('../fonts/Lato-Italic.woff2') format('woff2'),
-       url('../fonts/Lato-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
+.hist-text-2 {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0px;
+    justify-content: start;
+    align-items: start;
+    width: 196px;
 }
 
-@font-face {
-  font-family: 'Lato';
-  src: url('../fonts/Lato-Bold.woff2') format('woff2'),
-       url('../fonts/Lato-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
+.projects {
+    position: relative;
+    width: 393px;
+    height: 2627px;
 }
 
-@font-face {
-  font-family: 'Lato';
-  src: url('../fonts/Lato-BoldItalic.woff2') format('woff2'),
-       url('../fonts/Lato-BoldItalic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
-  font-display: swap;
+.prj-sky {
+    position: absolute;
+    width: 393px;
+    height: 494px;
+    left: 0px;
+    top: -32px;
+    mix-blend-mode: lighten;
 }
 
-@font-face {
-  font-family: 'Playfair Display';
-  src: url('../fonts/PlayfairDisplay-Regular.woff2') format('woff2'),
-       url('../fonts/PlayfairDisplay-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+.prj-heading {
+    position: absolute;
+    left: 121px;
+    top: 68px;
+    text-shadow: 
+        0 0 35px rgb(255, 236, 207),
+        0 0 100px rgba(0, 0, 0, 0.75);
 }
 
-@font-face {
-  font-family: 'Playfair Display';
-  src: url('../fonts/PlayfairDisplay-Italic.woff2') format('woff2'),
-       url('../fonts/PlayfairDisplay-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-  font-display: swap;
+.concerts {
+    position: absolute;
+    width: 393px;
+    height: 880px;
+    top: 125px;
 }
 
-@font-face {
-  font-family: 'Playfair Display';
-  src: url('../fonts/PlayfairDisplay-Medium.woff2') format('woff2'),
-       url('../fonts/PlayfairDisplay-Medium.ttf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+.concerts-year {
+    width: 68px;
+    height: 43px;
+    position: absolute;
+    left: 25px;
+    top: 0px;
 }
 
-@font-face {
-  font-family: 'Playfair Display';
-  src: url('../fonts/PlayfairDisplay-MediumItalic.woff2') format('woff2'),
-       url('../fonts/PlayfairDisplay-MediumItalic.ttf') format('truetype');
-  font-weight: 500;
-  font-style: italic;
-  font-display: swap;
+.concerts-heading {
+    position: absolute;
+    width: 313px;
+    left: 40px;
+    top: 10px;
+    text-shadow: 
+        0 0 35px rgb(255, 236, 207),
+        0 0 100px rgba(0, 0, 0, 0.75);
+}
+
+.concerts-ph {
+    position: absolute;
+    width: 393px;
+    height: 221px;
+    left: 0px;
+    top: 213px;
+}
+
+.concerts-txt {
+    position: absolute;
+    left: 40px;
+    top: 78px;
+    padding: 12px 16px;
+    background-color: rgba(175, 197, 255, 0.1);
+    display: block;
+    align-items: center;
+    border-radius: 20px;
+    border: solid 0.5px;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        inset -3px 3px 20px rgba(0, 2, 20, 0.5),
+        inset 3px -3px 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(0.5px);
+}
+
+.font-lato-prj {
+    font-family: "Lato";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.2;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    color: white;  
+}
+
+.concerts-shadow {
+    position: absolute;
+    width: 393px;
+    height: 612px;
+    left: 0px;
+    top: 344px;
+}
+
+.concerts-sky {
+    position: absolute;
+    width: 496px;
+    height: 256px;
+    left: -51px;
+    top: 624px;
+    mix-blend-mode: lighten;
+}
+
+.concerts-desc {
+    position: absolute;
+    flex-direction: column;
+    left: 40px;
+    top: 434px;
+    width: 313px;
+    display: flex;
+    gap: 16px;
+    justify-content: start;
+    align-items: start;
+}
+
+.desc-heading {
+    width: 100%;
+    text-shadow: 0 0 35px rgb(255, 236, 207);
+}
+
+.font-pd-m-16 {
+    font-family: "Playfair Display";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.1;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    color: white; 
+}
+
+.font-pd-mi-16 {
+    font-family: "Playfair Display";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.1;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    text-indent: 0;
+    color: white;  
+    font-style: italic;
+}
+
+.concerts-desc-texts {
+    width: 279px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: start;
+    align-items: start;
+}
+
+.concerts-desc-txt {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 4px;
+}
+
+.planet-concerts {
+    position: absolute;
+    left: 0px;
+    top: 638px;
+    width: 87px;
+    height: 173px;
+}
+
+.slogan {
+    position: absolute;
+    left: 68px;
+    top: 704px;
+    width: 258px;
+    text-shadow: 
+        0 0 35px rgb(255, 236, 207),
+        0 0 100px rgba(0, 0, 0, 0.75);
+}
+
+.font-pd-m-20 {
+    font-family: "Playfair Display";
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    line-height: 1.2;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.font-pd-mi-20 {
+    font-family: "Playfair Display";
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    line-height: 1.2;
+    text-align: center;
+    font-style: italic;
+    margin: 0;
+    padding: 0;
+}
+
+.physmus {
+    position: absolute;
+    top: 1005px;
+    width: 393px;
+    height: 637px;
+}
+
+.physmus-sky {
+    position: absolute;
+    top: 213px;
+    left: 0px;
+    width: 393px;
+    height: 494px;
+    mix-blend-mode: lighten;
+}
+
+.physmus-shadow {
+    position: absolute;
+    top: 188px;
+    left: 0px;
+    width: 393px;
+    height: 551px;
+    mix-blend-mode: multiply;
+}
+
+.physmus-orbit {
+    position: absolute;
+    top: 314px;
+    left: 0px;
+    width: 393px;
+    height: 321px;
+}
+
+.physmus-planets-r {
+    position: absolute;
+    width: 113px;
+    height: 261px;
+    left: 280px;
+    top: 25px;
+}
+
+.physmus-planet-l {
+    position: absolute;
+    width: 151px;
+    height: 172px;
+    left: 0px;
+    top: 272px;
+}
+
+.physmus-txt {
+    position: absolute;
+    left: 40px;
+    top: 44px;
+    padding: 12px 16px;
+    background-color: rgba(175, 197, 255, 0.1);
+    display: block;
+    align-items: center;
+    border-radius: 20px;
+    border: solid 0.5px;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        inset -3px 3px 20px rgba(0, 2, 20, 0.5),
+        inset 3px -3px 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(0.5px);
+}
+
+.physmus-heading {
+    position: absolute;
+    width: 313px;
+    left: 40px;
+    top: 2px;
+    text-shadow: 
+        0 0 35px rgb(255, 236, 207),
+        0 0 100px rgba(0, 0, 0, 0.75);
+}
+
+.physmus-year {
+    width: 40px;
+    height: 43px;
+    position: absolute;
+    left: 289px;
+    top: 143px;
+}
+
+.physmus-text {
+    position: absolute;
+    left: 40px;
+    top: 173px;
+    width: 231px;
+}
+
+.font-pd-mi-14 {
+    font-family: "Playfair Display";
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.3;
+    padding: 0px;
+    margin: 0px;
+    font-style: italic;
+    color: #AFC5FF;
+    text-align: left;
+    text-shadow: 0 0 35px rgb(255, 236, 207);
+}
+
+.physmus-star-1 {
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    left: 308px;
+    top: 496.2px;
+    mix-blend-mode: luminosity;
+}
+
+.physmus-star-2 {
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: 253px;
+    top: 546.2px;
+    mix-blend-mode: luminosity;
+    opacity: 0.8;
+}
+
+.physmus-star-3 {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 217px;
+    top: 568.2px;
+    mix-blend-mode: luminosity;
+    opacity: 0.5;
+}
+
+.physmus-years {
+    position: absolute;
+    width: 313px;
+    height: 156px;
+    left: 40px;
+    top: 452px;
+    text-shadow: 0 0 35px rgb(255, 236, 207);
+}
+
+.font-lato-10 {
+    font-family: "Lato";
+    font-weight: 400;
+    font-size: 10px;
+    color: white;
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.2;
+}
+
+.font-lato-12 {
+    font-family: "Lato";
+    font-weight: 400;
+    font-size: 12px;
+    color: white;
+    padding: 0px;
+    margin: 0px;
+    line-height: 1.2;
+}
+
+.cultcode {
+    position: absolute;
+    width: 393px;
+    height: 540px;
+    left: 0px;
+    top: 1658px;
+}
+
+.cultcode-sky {
+    position: absolute;
+    width: 393px;
+    height: 525px;
+    left: 0px;
+    top: 0px;
+    mix-blend-mode: lighten;
+}
+
+.cultcode-shadow {
+    position: absolute;
+    width: 393px;
+    height: 487px;
+    top: 26px;
+    left: 0px;
+}
+
+.cultcode-ph {
+    position: absolute;
+    width: 393px;
+    height: 286px;
+    left: 0px;
+    top: 117px;
+}
+
+.cultcode-year {
+    position: absolute;
+    width: 55px;
+    height: 32px;
+    left: 292px;
+    top: 7px;
+}
+
+.cultcode-heading {
+    position: absolute;
+    width: 313px;
+    left: 40px;
+    top: 48px;
+    text-shadow: 
+        0 0 35px rgb(255, 236, 207),
+        0 0 100px rgba(0, 0, 0, 0.75);
+}
+
+.cultcode-txt {
+    position: absolute;
+    left: 122px;
+    top: 140px;
+    padding: 12px 16px;
+    background-color: rgba(175, 197, 255, 0.1);
+    display: block;
+    align-items: center;
+    border-radius: 20px;
+    border: solid 0.5px;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        inset -3px 3px 20px rgba(0, 2, 20, 0.5),
+        inset 3px -3px 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(0.5px);
+}
+
+.cultcode-desc {
+    position: absolute;
+    left: 122px;
+    top: 286px;
+}
+
+.cultcode-texts {
+    position: absolute;
+    width: 231px;
+    left: 122px;
+    top: 334px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.cultcode-text {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.cultcode-star {
+    width: 36px;
+    height: 36px;
+    mix-blend-mode: luminosity;
+}
+
+.cultcode-planet {
+    position: absolute;
+    width: 126px;
+    height: 173px;
+    left: 0px;
+    top: 390px;
+}
+
+.universe {
+    position: absolute;
+    width: 393px;
+    height: 444px;
+    top: 2183px;
+}
+
+.universe-sky {
+    position: absolute;
+    width: 393px;
+    height: 508px;
+    top: -63px;
+    mix-blend-mode: lighten;
+}
+
+.universe-shadow {
+    position: absolute;
+    width: 393px;
+    height: 551px;
+    top: -98px;
+    mix-blend-mode: multiply;
+}
+
+.universe-orbit {
+    position: absolute;
+    width: 393px;
+    height: 321px;
+    top: 3px;
+}
+
+.universe-glow {
+    position: absolute;
+    width: 243px;
+    height: 259px;
+    top: 222px;
+    left: 150px;
+}
+
+.universe-year {
+    position: absolute;
+    width: 52px;
+    height: 22px;
+    top: 51px;
+    left: 282px;
+}
+
+.universe-heading {
+    position: absolute;
+    width: 313px;
+    left: 40px;
+    top: 108px;
+    text-shadow: 
+        0 0 35px rgb(255, 236, 207),
+        0 0 100px rgba(0, 0, 0, 0.75);
+}
+
+.universe-txt {
+    position: absolute;
+    left: 40px;
+    top: 176px;
+    padding: 12px 16px;
+    background-color: rgba(175, 197, 255, 0.1);
+    display: block;
+    align-items: center;
+    border-radius: 20px;
+    border: solid 0.5px;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        inset -3px 3px 20px rgba(0, 2, 20, 0.5),
+        inset 3px -3px 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(0.5px);
+}
+
+.universe-texts {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    width: 313px;
+    justify-content: start;
+    align-items: start;
+    position: absolute;
+    left: 40px;
+    top: 288px;
+}
+
+.link {
+    color: #AFC5FF;
+}
+
+.font-pd-mi-12 {
+    font-family: "Playfair Display";
+    font-size: 12px;
+    line-height: 1.2;
+    padding: 0px;
+    margin: 0px;
+    font-style: italic;
+    color: #AFC5FF;
+}
+
+.contacts {
+    position: relative;
+    width: 393px;
+    height: 517px;
+}
+
+.contacts-shadow {
+    position: absolute;
+    width: 393px;
+    height: 412px;
+    top: 105px;
+}
+
+.contacts-heading {
+    position: absolute;
+    left: 63px;
+    top: 9px;
+    text-shadow: 
+        0 0 35px rgb(255, 236, 207),
+        0 0 100px rgba(0, 0, 0, 0.75);
+}
+
+.Aleksey {
+    position: absolute;
+    width: 216px;
+    height: 216px;
+    top: 50px;
+    left: 89px;
+}
+
+.director {
+    position: absolute;
+    width: 159px;
+    left: 117px;
+    top: 252px;
+    text-shadow: 0 0 35px rgb(255, 236, 207);
+}
+
+.director-contacts {
+    position: absolute;
+    left: 110px;
+    top: 307px;
+}
+
+.contacts-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0px;
+    margin: 0px;
+    position: absolute;
+    left: 140px;
+    top: 379px;
+}
+
+.link-tg-vk {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    align-items: center;
+    padding: 12px 0px;
+}
+
+.cont-link {
+    text-decoration: none;
+    color: white;
 }

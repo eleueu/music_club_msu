@@ -7,8 +7,15 @@
 
   if (!page || !stage) return;
 
+  function getViewportWidth() {
+    // clientWidth — та же величина, которую браузер использует для медиазапросов;
+    // на некоторых мобильных браузерах она надёжнее, чем window.innerWidth
+    var docWidth = document.documentElement.clientWidth;
+    return docWidth || window.innerWidth;
+  }
+
   function applyScale() {
-    var viewportWidth = window.innerWidth;
+    var viewportWidth = getViewportWidth();
     var scale = Math.min(viewportWidth, MAX_WIDTH) / BASE_WIDTH;
 
     page.style.transform = 'scale(' + scale + ')';

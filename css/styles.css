@@ -1155,7 +1155,7 @@ body {
     flex-direction: column;
 }
 
-.members-start {
+/* .members-start {
     position: relative;
     width: 393px;
     height: 63px;
@@ -1316,4 +1316,312 @@ body {
     padding: 0;
     color: white;
     margin: 0;
+} */
+
+.members-start {
+    display: block;
+    height: 68px;
+    position: relative;
+    overflow: visible;
+    margin-bottom: 36px;
+}
+
+.members-shadow {
+    position: absolute;
+    height: 551px;
+    top: 65px;
+    mix-blend-mode: multiply;
+}
+
+.members-sky {
+    height: 513px;
+    mix-blend-mode: lighten;
+}
+
+.members-orbit {
+    height: 321px;
+    position: absolute;
+    top: 194px;
+    left: 0;
+}
+
+.members-logo {
+    height: 35px;
+    position: absolute;
+    left: 40px;
+    top: 32px;
+}
+
+.members-star-1 {
+    width: 28px;
+    position: absolute;
+    left: 38px;
+    top: 499px;
+    mix-blend-mode: luminosity;
+}
+
+.members-star-2 {
+    width: 36px;
+    position: absolute;
+    left: 91px;
+    top: 485.2px;
+    mix-blend-mode: luminosity;
+}
+
+.members-star-3 {
+    width: 52px;
+    position: absolute;
+    left: 142px;
+    top: 461px;
+    mix-blend-mode: luminosity;
+}
+
+.head {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    position: relative;
+}
+
+.members-heading {
+    display: block;
+    text-shadow: 
+        0 0 35px rgb(255, 236, 207),
+        0 0 100px rgba(0, 0, 0, 0.75);
+}
+
+.members-director {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    text-shadow: 
+        0 0 35px rgb(255, 236, 207),
+        0 0 100px rgba(0, 0, 0, 0.75);
+}
+
+.director-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 4px 0;
+}
+
+.director-photo {
+    width: 132px;
+    height: 132px;
+    display: block;
+    position: relative;
+}
+
+.director-photo img {
+    width: 182px;
+    height: 182px;
+    position: absolute;
+    left: -22.5px;
+    top: -28px;
+}
+
+.director-name {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+}
+
+.font-lato-16 {
+    font-family: "Lato";
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 400;
+    color: white;
+    opacity: 0.6;
+    padding: 0;
+    margin: 0;
+    text-shadow: none;
+}
+
+.musicians {
+    position: relative;
+    margin-top: 76px;
+    display: block;
+}
+
+.musicians-sky {
+    height: 450px;
+    position: absolute;
+    bottom: 0;
+    mix-blend-mode: lighten;
+}
+
+.musicians-heading {
+    position: absolute;
+    left: 214px;
+    text-shadow: 
+        0 0 35px rgb(255, 236, 207),
+        0 0 100px rgba(0, 0, 0, 0.75);
+}
+
+.group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 42px;
+    align-items: center;
+}
+
+.member {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    width: 313px;
+    justify-content: start;
+    align-items: center;
+}
+
+.member-photo {
+    position: relative;
+    width: 90px;
+    height: 90px;
+}
+
+.member-photo img {
+    position: absolute;
+    width: 124px;
+    height: 124px;
+    left: -19px;
+    top: -18px;
+}
+
+.name {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    width: 211px;
+}
+
+.name .font-pd-m-20 {
+    line-height: 1.3;
+    text-shadow: 
+        0 0 35px rgb(255, 236, 207),
+        0 0 100px rgba(0, 0, 0, 0.75);
+}
+
+.musicians-photo {
+    position: relative;
+    height: 296px;
+    margin-top: 18px;
+}
+
+.organizators {
+    position: relative;
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: start;
+    justify-content: start;
+    padding: 0 40px 0 40px;
+}
+
+.organizators .font-pd-mi-24 {
+    text-shadow: 
+        0 0 35px rgb(255, 236, 207),
+        0 0 100px rgba(0, 0, 0, 0.75);
+}
+
+.organizators .group {
+    padding-top: 0;
+}
+
+.volunteers {
+    position: relative;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: start;
+    justify-content: start;
+    padding: 0 40px 0 40px;
+}
+
+.volunteers .font-pd-mi-24 {
+    text-shadow: 
+        0 0 35px rgb(255, 236, 207),
+        0 0 100px rgba(0, 0, 0, 0.75);
+}
+
+.bottom {
+    position: relative;
+    height: 442px;
+    overflow: visible;
+}
+
+.bottom-shadow {
+    height: 412px;
+    position: absolute;
+    bottom: 0;
+}
+
+.bottom-sky-1 {
+    height: 444px;
+    position: absolute;
+    top: -127px;
+    mix-blend-mode: lighten;
+}
+
+.bottom-sky-2 {
+    height: 347px;
+    position: absolute;
+    top: 95px;
+    mix-blend-mode: lighten;
+}
+
+.ph-2 {
+    height: 296px;
+    position: absolute;
+    top: 30px;
+}
+
+.join {
+    position: absolute;
+    left: 40px;
+    top: 301px;
+    padding: 12px 16px;
+    background-color: rgba(175, 197, 255, 0.2);
+    display: block;
+    align-items: center;
+    border-radius: 20px;
+    border: solid 0.5px;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        inset -3px 3px 20px rgba(0, 2, 20, 0.5),
+        inset 3px -3px 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1px);
+    width: 313px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.join:hover {
+    background-color: rgba(175, 197, 255, 0.3);
+    border-color: rgba(175, 197, 255, 0.6);
+    box-shadow: 
+        0 0 30px rgba(175, 197, 255, 0.2),
+        inset -3px 3px 20px rgba(0, 2, 20, 0.5),
+        inset 3px -3px 20px rgba(255, 255, 255, 0.3);
+    transform: scale(1.02);
+}
+
+.join:active {
+    transform: scale(0.97);
+    transition-duration: 0.1s;
+}
+
+.join-link {
+    text-decoration: none;
+    display: inline-block;
 }

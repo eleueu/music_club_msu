@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../assets/icon.png" />
+    <title>Клуб классической музыки МГУ | Участники Клуба</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <div id="stage">
+        <main id="page">
+            <div class="join-start">
+                <img class="shading" src="../assets/shading.png">
+                <img class="join-sky" src="../assets/join-sky.png">
+                <img class="page-logo" src="../assets/logo.svg">
+                <div class="join-heading">
+                    <p class="font-pd-m-24">
+                        <span class="font-pd-mi-24">Анкета&nbsp;</span>для вступления<br />в Клуб классической музыки МГУ
+                    </p>
+                </div>
+            </div>
+            <form id="joinForm" class="form-container" method="POST">
+                <div class="field">
+                    <div class="field-name">
+                        <p class="font-lato-12" style="color: #AFC5FF;">Фамилия</p>
+                    </div>
+                    <div class="label">
+                        <input type="text" id="lastName" name="lastName" class="field-input" placeholder="Фамилия" required>
+                    </div>
+                    <div class="hint">
+                        <p class="font-lato-12">Подсказка</p>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-name">
+                        <p class="font-lato-12" style="color: #AFC5FF;">Имя</p>
+                    </div>
+                    <div class="label">
+                        <input type="text" id="firstName" name="firstName" class="field-input" placeholder="Имя" required>
+                    </div>
+                    <div class="hint">
+                        <p class="font-lato-12">Подсказка</p>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-name">
+                        <p class="font-lato-12" style="color: #AFC5FF;">Отчество</p>
+                    </div>
+                    <div class="label">
+                        <input type="text" id="patronymic" name="patronymic" class="field-input" placeholder="Отчество">
+                    </div>
+                    <div class="hint">
+                        <p class="font-lato-12">Подсказка</p>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-name">
+                        <p class="font-lato-12" style="color: #AFC5FF;">Факультет</p>
+                    </div>
+                    <div class="label">
+                        <input type="text" id="faculty" name="faculty" class="field-input" placeholder="Факультет" required>
+                    </div>
+                    <div class="hint" style="display: block;">
+                        <p class="font-lato-12">Если Вы студент не МГУ, укажите название своего вуза</p>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="select-wrapper">
+                        <select class="field-input" id="role" name="role" required>
+                            <option value="" disabled selected>Роль в Клубе</option>
+                            <option value="musician">Музыкант</option>
+                            <option value="volunteer">Волонтёр</option>
+                        </select>
+                        <img class="select-arrow" src="../assets/arrow.svg" alt="▼">
+                    </div>
+                    <div class="hint" style="display: block;">
+                        <p class="font-lato-12">Кем Вы хотите быть в Клубе?</p>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-name">
+                        <p class="font-lato-12" style="color: #AFC5FF;">Комментарий</p>
+                    </div>
+                    <div class="label">
+                        <textarea id="comment" name="comment" class="field-input" placeholder="Комментарий"></textarea>
+                    </div>
+                    <div class="hint" style="display: block;">
+                        <p class="font-lato-12">Это необязательное поле, если хотите что-то добавить :)</p>
+                    </div>
+                </div>
+            </form>
+        </main>
+        <button class="burger" id="burger" aria-label="Меню">
+            <img class="burger-img" src="../assets/burger.svg">
+        </button>
+        <div class="overlay" id="overlay"></div>
+        <nav class="side-menu" id="sideMenu">
+            <div class="menu-logo">
+                <img src="../assets/logo.svg" alt="Логотип Клуба классической музыки МГУ">
+            </div>
+            <div class="menu-links">
+                <a href="../index.html">Главная</a>
+                <a href="../team/index.html">Участники Клуба</a>
+                <a href="#">Афиша</a>
+                <a href="#">Архив</a>
+                <a href="../join/index.html" class="active">Вступить в Клуб</a>
+            </div>
+        </nav>
+    </div>
+    <script src="../js/script.js"></script>
+</body>

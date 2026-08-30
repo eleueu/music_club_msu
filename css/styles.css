@@ -26,6 +26,7 @@ body {
   transform-origin: top center;
   background: #000433; 
   overflow: hidden;
+  min-height: 852px;
 }
 
 .start {
@@ -1182,7 +1183,7 @@ body {
     left: 0;
 }
 
-.members-logo {
+.page-logo {
     height: 35px;
     position: absolute;
     left: 40px;
@@ -1461,4 +1462,214 @@ body {
 .join-link {
     text-decoration: none;
     display: inline-block;
+}
+
+.join-start {
+    display: block;
+    height: 175px;
+    position: relative;
+    overflow: visible;
+    margin-bottom: 28px;
+}
+
+.shading {
+    height: 412px;
+}
+
+.join-sky {
+    height: 513px;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.join-heading {
+    width: 313px;
+    position: absolute;
+    left: 40px;
+    top: 88px;
+    text-shadow: 
+        0 0 35px rgb(255, 236, 207),
+        0 0 100px rgba(0, 0, 0, 0.75);
+}
+
+.join-heading .font-pd-m-24 {
+    line-height: 1.2;
+    color: white;
+    text-align: center;
+}
+
+.join-heading .font-pd-mi-24 {
+    line-height: 1.2;
+    color: white;
+    text-align: center;
+}
+
+.form-container {
+    position: relative;
+    padding: 0 40px 0 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.field-name {
+    position: relative;
+    padding: 0 12px;
+    display: none;
+}
+
+.hint {
+    position: relative;
+    padding: 0 12px;
+    display: none;
+    margin-top: 4px;
+}
+
+.select-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 36px;
+    padding: 8px 12px;
+    background-color: rgba(175, 197, 255, 0.2);
+    border-radius: 15px;
+    border: 0.5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        inset -3px 3px 20px rgba(0, 2, 20, 0.5),
+        inset 3px -3px 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1px);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.select-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    padding: 0;
+    width: 100%;
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    border-radius: 15px;
+    margin: 0;
+}
+
+.select-wrapper select:invalid {
+    opacity: 0.6;
+}
+
+.select-wrapper select:valid {
+    opacity: 1;
+}
+
+.select-wrapper select option {
+    background-color: rgba(0, 4, 51, 1);
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 15px;
+}
+
+.select-arrow {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.select-arrow.rotated {
+    transform: translateY(-50%) rotate(180deg);
+    filter: brightness(1);
+}
+
+.label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 36px;
+    padding: 8px 12px;
+    background-color: rgba(175, 197, 255, 0.2);
+    border-radius: 15px;
+    border: 0.5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        inset -3px 3px 20px rgba(0, 2, 20, 0.5),
+        inset 3px -3px 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1px);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.label:focus-within {
+    border-color: #AFC5FF;
+    box-shadow: 0 0 20px rgba(175, 197, 255, 0.1);
+}
+
+.field-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    padding: 0;
+    margin: 0;
+    resize: vertical;
+    min-height: 20px;
+}
+
+.field-input::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 1;
+}
+
+.field-input:focus::placeholder,
+.field-input:not(:placeholder-shown)::placeholder {
+    opacity: 0;
+}
+
+.field-name {
+    display: none;
+    margin-bottom: 4px;
+}
+
+.field:focus-within .field-name,
+.field:has(.field-input:not(:placeholder-shown)) .field-name {
+    display: block;
+}
+
+textarea.field-input {
+    min-height: 36px;
+    max-height: 200px;
+    resize: none;
+    padding: 0;
+    overflow-y: auto;
 }

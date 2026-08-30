@@ -31,7 +31,7 @@
     }
 
     if (sideMenu) {
-        
+
     }
   }
 
@@ -55,5 +55,54 @@ overlay.addEventListener('click', toggleMenu);
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && sideMenu.classList.contains('open')) {
         toggleMenu();
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const select = document.getElementById('role');
+    const arrow = document.querySelector('.select-arrow');
+
+    if (select && arrow) {
+        select.addEventListener('change', function() {
+            arrow.classList.remove('rotated');
+        });
+
+        select.addEventListener('focus', function() {
+            arrow.classList.add('rotated');
+        });
+
+        select.addEventListener('blur', function() {
+            arrow.classList.remove('rotated');
+        });
+    }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const inputs = document.querySelectorAll('.field-input');
+    
+    inputs.forEach(input => {
+        input.addEventListener('input', function() {
+            const field = this.closest('.field');
+            if (field) {
+                if (this.value.trim() !== '') {
+                    field.classList.add('filled');
+                } else {
+                    field.classList.remove('filled');
+                }
+            }
+        });
+    });
+});
+
+document.querySelectorAll('textarea.field-input').forEach(textarea => {
+    function autoResize() {
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+    }
+    
+    textarea.addEventListener('input', autoResize);
+    
+    if (textarea.value) {
+        autoResize.call(textarea);
     }
 });

@@ -65,6 +65,28 @@
                     </div>
                 </div>
                 <div class="field">
+                    <div class="field-name">
+                        <p class="font-lato-12" style="color: #AFC5FF;">Ссылка на ВК или ТГ</p>
+                    </div>
+                    <div class="label">
+                        <input type="text" id="link" name="link" class="field-input" placeholder="Ссылка на ВК или ТГ" required>
+                    </div>
+                    <div class="hint" style="display: block;">
+                        <p class="font-lato-12">Нужно, чтобы мы могли с Вами связаться, когда получим Вашу анкету</p>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-name">
+                        <p class="font-lato-12" style="color: #AFC5FF;">Электронная почта</p>
+                    </div>
+                    <div class="label">
+                        <input type="email" id="email" name="email" class="field-input" placeholder="Электронная почта" required>
+                    </div>
+                    <div class="hint" style="display: block;">
+                        <p class="font-lato-12">Дополнительный способ связи с Вами</p>
+                    </div>
+                </div>
+                <div class="field">
                     <div class="select-wrapper">
                         <select class="field-input" id="role" name="role" required>
                             <option value="" disabled selected>Роль в Клубе</option>
@@ -75,6 +97,41 @@
                     </div>
                     <div class="hint" style="display: block;">
                         <p class="font-lato-12">Кем Вы хотите быть в Клубе?</p>
+                    </div>
+                </div>
+                <div class="field musician-fields" id="musicianFields" style="display: none;">
+                    <div class="field-name">
+                        <p class="font-lato-12" style="color: #AFC5FF;">Музыкальный инструмент</p>
+                    </div>
+                    <div class="label">
+                        <input type="text" id="instrument" name="instrument" class="field-input" placeholder="Музыкальный инструмент">
+                    </div>
+                    <div class="hint" style="display: block;">
+                        <p class="font-lato-12">На каком музыкальном инструменте Вы играете?</p>
+                    </div>
+                </div>
+                <div class="field musician-fields" id="musicianFields" style="display: none;">
+                    <div class="field-name">
+                        <p class="font-lato-12" style="color: #AFC5FF;">Опыт</p>
+                    </div>
+                    <div class="label">
+                        <input type="text" id="musicianExperience" name="musicianExperience" class="field-input" placeholder="Опыт">
+                    </div>
+                    <div class="hint" style="display: block;">
+                        <p class="font-lato-12">Расскажите о своём опыте выступлений, образовании, достижениях</p>
+                    </div>
+                </div>
+                <div class="field volunteer-fields" id="volunteerFields" style="display: none;">
+                    <div class="field-name">
+                        <p class="font-lato-12" style="color: #AFC5FF;">Опыт</p>
+                    </div>
+                    <div class="label">
+                        <textarea id="volunteerExperience" name="volunteerExperience" class="field-input" placeholder="Опыт"></textarea>
+                    </div>
+                    <div class="hint" style="display: block;">
+                        <p class="font-lato-12">
+                            Расскажите о своём опыте участия в проектах, <br />в студенческих объединениях, в организации мероприятий. С чем Вы готовы помогать, какие направления Вам интересны (работа со зрителями, фото- и видеосъёмка, медиа и т.д.)? Ничего страшного, если опыта нет — мы будем рады каждому и обязательно Вам поможем!
+                        </p>
                     </div>
                 </div>
                 <div class="field">
@@ -88,6 +145,12 @@
                         <p class="font-lato-12">Это необязательное поле, если хотите что-то добавить :)</p>
                     </div>
                 </div>
+                <button type="submit" class="submit-btn">Отправить</button>
+                <p class="submit-hint">
+                    Нажимая «Отправить», Вы даёте согласие<br
+                    >на обработку персональных данных, указанных<br>
+                    в анкете
+                </p>
             </form>
         </main>
         <button class="burger" id="burger" aria-label="Меню">

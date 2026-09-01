@@ -1673,3 +1673,68 @@ textarea.field-input {
     padding: 0;
     overflow-y: auto;
 }
+
+.musician-fields,
+.volunteer-fields {
+    transition: all 0.3s ease;
+}
+
+.field.error .label {
+    border-color: #FF6B6B;
+    box-shadow: 0 0 20px rgba(255, 107, 107, 0.15);
+}
+
+.field.error .field-name p {
+    color: #FF6B6B !important;
+}
+
+.field.error .field-input::placeholder {
+    color: rgba(255, 107, 107, 0.4);
+}
+
+.submit-btn {
+    height: 36px;
+    width: 100%;
+    padding: 8px 12px;
+    background-color: rgba(175, 197, 255, 0.7);
+    border-radius: 15px;
+    border: 0.5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        inset -3px 3px 20px rgba(0, 2, 20, 0.5),
+        inset 3px -3px 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(1px);
+    color: white;
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 24px;
+}
+
+.submit-btn:hover {
+    background-color: rgba(175, 197, 255, 0.6);
+    border-color: rgba(175, 197, 255, 0.5);
+    box-shadow: 0 0 30px rgba(175, 197, 255, 0.15);
+}
+
+.submit-btn:active {
+    transform: scale(0.97);
+}
+
+.submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.submit-hint {
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    margin: 0 0 52px 0;
+    padding: 0;
+}

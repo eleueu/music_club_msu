@@ -258,13 +258,19 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const formData = new FormData(this);
 
-        const role = document.getElementById('role')?.value;
-        if (role === 'musician') {
+        const roleSelect = document.getElementById('role');
+        const selectedOption = roleSelect.options[roleSelect.selectedIndex];
+        const roleText = selectedOption.text; 
+
+        formData.delete('role');
+        formData.append('role', roleText);
+
+        if (roleSelect.value === 'musician') {
             const instrument = document.getElementById('instrument')?.value || '';
             const musicianExp = document.getElementById('musicianExperience')?.value || '';
             formData.append('instrument', instrument);
             formData.append('experience', musicianExp);
-        } else if (role === 'volunteer') {
+        } else if (roleSelect.value === 'volunteer') {
             const volunteerExp = document.getElementById('volunteerExperience')?.value || '';
             formData.append('experience', volunteerExp);
         }
@@ -284,19 +290,7 @@ document.addEventListener('DOMContentLoaded', function() {
         })
         .then(function(data) {
             console.log('Отправлено!', data);
-            form.reset();
-            if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Отправить';
-            }
-            document.querySelectorAll('.musician-fields, .volunteer-fields').forEach(function(el) {
-                el.style.display = 'none';
-            });
-            roleSelect.value = '';
-            updateRequiredFields();
-            document.querySelectorAll('.musician-fields, .volunteer-fields').forEach(function(el) {
-                el.classList.remove('error');
-            });
+            window.location.href = 'success.html';
         })
         .catch(function(error) {
             console.error('Ошибка:', error);
@@ -306,4 +300,51 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.pathname.includes('success.html')) {
+        const refillBtn = document.getElementById('refill-btn');
+        const shareBtn = document.getElementById('share-btn');
+        const homeBtn = document.getElementById('home-btn');
+
+        if (refillBtn) {
+            refillBtn.addEventListener('click', function() {
+                window.location.href = '../join/index.html';
+            });
+        }
+
+        if (homeBtn) {
+            homeBtn.addEventListener('click', function() {
+                window.location.href = '../index.html';
+            });
+        }
+
+        if (shareBtn) {
+            shareBtn.addEventListener('click', function() {
+                const url = window.location.href.replace('success.html', 'index.html');
+
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'Анкета для вступления в Клуб классической музыки МГУ',
+                        url: url
+                    }).catch(function(err) {
+                        if (err.name !== 'AbortError') {
+                            console.warn('Ошибка при попытке поделиться:', err);
+                        }
+                    });
+                } else {
+                    navigator.clipboard.writeText(url).then(function() {
+                        const originalText = shareBtn.textContent;
+                        shareBtn.textContent = 'Ссылка скопирована!';
+                        setTimeout(function() {
+                            shareBtn.textContent = originalText;
+                        }, 3000);
+                    }).catch(function() {
+                        alert('Не удалось скопировать ссылку. Попробуйте вручную: ' + url);
+                    });
+                }
+            });
+        }
+    }
 });

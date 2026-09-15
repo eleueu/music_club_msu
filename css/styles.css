@@ -1375,23 +1375,6 @@ body {
     padding-top: 0;
 }
 
-.volunteers {
-    position: relative;
-    margin-top: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    align-items: start;
-    justify-content: start;
-    padding: 0 40px 0 40px;
-}
-
-.volunteers .font-pd-mi-24 {
-    text-shadow: 
-        0 0 35px rgb(255, 236, 207),
-        0 0 100px rgba(0, 0, 0, 0.75);
-}
-
 .bottom {
     position: relative;
     height: 442px;

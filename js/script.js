@@ -153,3 +153,25 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const showMoreBtn = document.getElementById('showMoreBtn');
+    const hiddenCards = Array.from(document.querySelectorAll('.past-card-hidden'));
+    const STEP = 6;
+
+    if (showMoreBtn && hiddenCards.length > 0) {
+        let shown = 0;
+
+        showMoreBtn.addEventListener('click', function() {
+            for (let i = shown; i < shown + STEP && i < hiddenCards.length; i++) {
+                hiddenCards[i].classList.remove('past-card-hidden');
+            }
+            shown += STEP;
+
+            if (shown >= hiddenCards.length) {
+                showMoreBtn.style.display = 'none';
+            }
+        });
+    }
+});

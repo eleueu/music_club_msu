@@ -157,23 +157,43 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     const showMoreBtn = document.getElementById('showMoreBtn');
+    const pastList = document.querySelector('.past-list');
     const hiddenCards = Array.from(document.querySelectorAll('.past-card-hidden'));
     const STEP = 6;
 
-    if (showMoreBtn && hiddenCards.length > 0) {
-        let shown = 0;
+    if (!showMoreBtn || !pastList || hiddenCards.length === 0) return;
 
-        showMoreBtn.addEventListener('click', function() {
-            for (let i = shown; i < shown + STEP && i < hiddenCards.length; i++) {
-                hiddenCards[i].classList.remove('past-card-hidden');
-            }
-            shown += STEP;
+    let shown = 0;
 
-            if (shown >= hiddenCards.length) {
-                showMoreBtn.style.display = 'none';
-            }
+    showMoreBtn.addEventListener('click', function() {
+        const willHideBtn = (shown + STEP) >= hiddenCards.length;
+        const visibleCards = pastList.querySelectorAll('.past-card:not(.past-card-hidden)');
+        const anchor = willHideBtn
+            ? visibleCards[visibleCards.length - 1]
+            : showMoreBtn;
+
+        const anchorTopBefore = anchor.getBoundingClientRect().top;
+
+        for (let i = shown; i < shown + STEP && i < hiddenCards.length; i++) {
+            hiddenCards[i].classList.remove('past-card-hidden');
+        }
+        shown += STEP;
+
+        if (willHideBtn) {
+            showMoreBtn.style.display = 'none';
+        }
+
+        requestAnimationFrame(function() {
+            requestAnimationFrame(function() {
+                const anchorTopAfter = anchor.getBoundingClientRect().top;
+                const diff = anchorTopAfter - anchorTopBefore;
+
+                if (diff !== 0) {
+                    window.scrollBy(0, diff);
+                }
+            });
         });
-    }
+    });
 });
 
 
@@ -192,8 +212,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalYear = document.getElementById('modalYear');
     const modalLinks = document.getElementById('modalLinks');
 
-    // Папка со «светлыми» версиями картинок (без затемнения).
-    // Лежит рядом с затемнёнными: ../assets/afisha/light/...
     const LIGHT_DIR = 'light';
 
     function getLightSrc(imgSrc) {
@@ -227,7 +245,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 ? getLightSrc(cardImg.getAttribute('src'))
                 : '';
 
-            // Если «светлой» версии нет — откатываемся на затемнённую.
             modalPic.onerror = function () {
                 if (cardImg) {
                     modalPic.src = cardImg.getAttribute('src');

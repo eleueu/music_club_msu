@@ -1926,7 +1926,7 @@ textarea.field-input {
 .name {
     display: flex;
     flex-direction: column;
-    gap: 0;
+    gap: 4px;
 }
 
 .name .font-pd-m-24 {
@@ -2123,7 +2123,7 @@ textarea.field-input {
     position: relative;
     width: 313px;
     padding: 0;
-    border-radius: 25px;
+    border-radius: 30px;
     border: 1px solid rgba(255, 255, 255, 0.3);
     background-color: rgba(0, 4, 51, 0.85);
     box-shadow: 
@@ -2196,4 +2196,8 @@ textarea.field-input {
 
 .modal .datetime {
     gap: 8px;
+}
+
+.modal .name {
+    width: auto;
 }

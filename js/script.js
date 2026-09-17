@@ -192,6 +192,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalYear = document.getElementById('modalYear');
     const modalLinks = document.getElementById('modalLinks');
 
+    // Папка со «светлыми» версиями картинок (без затемнения).
+    // Лежит рядом с затемнёнными: ../assets/afisha/light/...
+    const LIGHT_DIR = 'light';
+
+    function getLightSrc(imgSrc) {
+        if (!imgSrc) return '';
+        const idx = imgSrc.lastIndexOf('/');
+        if (idx === -1) return imgSrc;
+        return imgSrc.slice(0, idx + 1) + LIGHT_DIR + '/' + imgSrc.slice(idx + 1);
+    }
+
     function addLink(url, label) {
         const a = document.createElement('a');
         a.href = url;
@@ -210,9 +221,22 @@ document.addEventListener('DOMContentLoaded', function() {
         modalYear.textContent = card.dataset.year || '';
 
         const cardImg = card.querySelector('img');
-        if (cardImg && modalPic) {
-            modalPic.src = cardImg.src;
-            modalPic.alt = card.dataset.title || '';
+
+        if (modalPic) {
+            const lightSrc = cardImg
+                ? getLightSrc(cardImg.getAttribute('src'))
+                : '';
+
+            // Если «светлой» версии нет — откатываемся на затемнённую.
+            modalPic.onerror = function () {
+                if (cardImg) {
+                    modalPic.src = cardImg.getAttribute('src');
+                }
+                modalPic.onerror = null;
+            };
+
+            modalPic.src = lightSrc;
+            modalPic.alt = (card.dataset.title || '') + ' — афиша';
         }
 
         modalLinks.innerHTML = '';
@@ -221,6 +245,7 @@ document.addEventListener('DOMContentLoaded', function() {
         try {
             links = JSON.parse(card.dataset.links || '[]');
         } catch (e) {
+            console.warn('Не удалось разобрать data-links у карточки:', card.dataset.title, e);
             links = [];
         }
 

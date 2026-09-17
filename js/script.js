@@ -175,3 +175,87 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalClose = document.getElementById('modalClose');
+    const pastCards = document.querySelectorAll('.past-card');
+
+    if (!modalOverlay || !modalClose || pastCards.length === 0) return;
+
+    const modalPic = document.getElementById('modalPic');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalSubtitle = document.getElementById('modalSubtitle');
+    const modalDay = document.getElementById('modalDay');
+    const modalMonth = document.getElementById('modalMonth');
+    const modalYear = document.getElementById('modalYear');
+    const modalLinks = document.getElementById('modalLinks');
+
+    function addLink(url, label) {
+        const a = document.createElement('a');
+        a.href = url;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.className = 'register-btn';
+        a.textContent = label;
+        modalLinks.appendChild(a);
+    }
+
+    function openModal(card) {
+        modalTitle.textContent = card.dataset.title || '';
+        modalSubtitle.textContent = card.dataset.subtitle || '';
+        modalDay.textContent = card.dataset.day || '';
+        modalMonth.textContent = card.dataset.month || '';
+        modalYear.textContent = card.dataset.year || '';
+
+        const cardImg = card.querySelector('img');
+        if (cardImg && modalPic) {
+            modalPic.src = cardImg.src;
+            modalPic.alt = card.dataset.title || '';
+        }
+
+        modalLinks.innerHTML = '';
+
+        let links = [];
+        try {
+            links = JSON.parse(card.dataset.links || '[]');
+        } catch (e) {
+            links = [];
+        }
+
+        links.forEach(function(item) {
+            const label = item.label || (item.type === 'video' ? 'Смотреть видео' : 'Смотреть фотоальбом');
+            addLink(item.url, label);
+        });
+
+        modalOverlay.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modalOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    pastCards.forEach(function(card) {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', function() {
+            openModal(card);
+        });
+    });
+
+    modalClose.addEventListener('click', closeModal);
+
+    modalOverlay.addEventListener('click', function(e) {
+        if (e.target === modalOverlay) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modalOverlay.classList.contains('open')) {
+            closeModal();
+        }
+    });
+});

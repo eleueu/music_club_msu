@@ -2201,3 +2201,27 @@ textarea.field-input {
 .modal .name {
     width: auto;
 }
+
+.links-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 40px;
+    gap: 20px;
+    padding: 20px 16px;
+    background-color: rgba(175, 197, 255, 0.1);
+    align-items: center;
+    border-radius: 20px;
+    border: solid 0.5px;
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        inset -3px 3px 20px rgba(0, 2, 20, 0.5),
+        inset 3px -3px 20px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(0.5px);
+}
+
+.links-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
